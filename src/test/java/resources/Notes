@@ -1,0 +1,27 @@
+local host http://127.0.0.1
+port number: :4723
+client code is sent to server, it interperates to json file, then mobile guesture actions happens in emulator
+using DesiredCapability class, the object initializes the device capabilities(NexusS in my system, version 7.0) 
+path to server: C:\Users\karth\AppData\Roaming\npm\node_modules\appium\build\lib\main.js
+apk file for twoPlugs- app-release-87.apk(look under src/test/ folder)
+
+Steps for emulator:
+Open Android studio,create new project, click finish(takes a lot of time)wait for indexing to complete.
+Under tools > AVD Manager(Android virtual device) > click create virtual device > select Nexus S >next >version 7.0
+> give any AVD name(I have given the same name)
+> (Advance setting-->increase Ram speed if system is too slow(optional)) > Finish
+Close the Android studio, once installation is complete(this will improve the speed and performance of the system)
+
+Steps on how emulator is attached as part of framework:
+go to the location of sdk tools: C:\Users\karth\AppData\Local\Android\Sdk\tools
+In cmd prompt cd C:\Users\karth\AppData\Local\Android\Sdk\tools
+check how many emulators you have? emulator -list-avds
+To lauch the device from cmd prompt: emulator -avd NexusS
+
+Steps to create a .bat file: Use this steps to add your device as .bat file to framework(Already available in framework)
+First close all device.
+open a notepad anywhere, 
+Navigate to the location by giving the path: cd C:\Users\karth\AppData\Local\Android\Sdk
+Then give: emulator -avd NexusS
+Finally save the text file as startEmulator.bat under resources package of the corresponding project
+
